@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/Applications/microchip/xc8/v1.45/dat/en_msgs.txt -cs \
   -h+dist/default/production/midi.X.production.sym \
   --cmf=dist/default/production/midi.X.production.cmf -z -Q18F4620 \
-  -o/tmp/xcnamo3Vz -Mdist/default/production/midi.X.production.map -E1 \
+  -o/tmp/xc8dCHPNn -Mdist/default/production/midi.X.production.map -E1 \
   -ver=XC8 -ASTACK=080h-0f7fh -pstack=STACK -ACODE=00h-0FFFFh \
   -ACONST=00h-0FFFFh -ASMALLCONST=01000h-010FFhx240 \
   -AMEDIUMCONST=01000h-0FFFFh -ACOMRAM=01h-07Fh -AABS1=00h-0F7Fh \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xceplgZrU.obj dist/default/production/midi.X.production.obj 
+  /tmp/xc4xGEYc4.obj dist/default/production/midi.X.production.obj 
 
 Object code version is 3.11
 
@@ -37,42 +37,38 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xceplgZrU.obj
+/tmp/xc4xGEYc4.obj
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production/midi.X.production.obj
-                text10                             FD90     FD90       14     7EC8       0
-                text9                              FDA4     FDA4       18     7ED2       0
-                text8                              FD7E     FD7E       12     7EBF       0
-                text7                              FD72     FD72        C     7EB9       0
-                text6                              FE02     FE02       CC     7F01       0
-                text5                              FECE     FECE      132     7F67       0
-                text4                              FDD6     FDD6       2C     7EEB       0
-                text3                              FD58     FD58        8     7EAC       0
-                text2                              FD60     FD60        8     7EB0       0
-                text1                              FDBC     FDBC       1A     7EDE       0
-                text0                              FD68     FD68        A     7EB4       0
-                cstackCOMRAM                          1        1       1C        1       1
-                cinit                              FD52     FD52        6     7EA9       0
+                text8                              FD82     FD82       14     7EC1       0
+                text7                              FD66     FD66        8     7EB3       0
+                text6                              FD6E     FD6E        8     7EB7       0
+                text5                              FD96     FD96       1A     7ECB       0
+                text4                              FD76     FD76        C     7EBB       0
+                text3                              FE02     FE02       CC     7F01       0
+                text2                              FECE     FECE      132     7F67       0
+                text1                              FDB0     FDB0       28     7ED8       0
+                text0                              FDD8     FDD8       2A     7EEC       0
+                cstackCOMRAM                          1        1       25        1       1
+                cinit                              FD60     FD60        6     7EB0       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text10                             FD90     FD90       14         0
-                text9                              FDA4     FDA4       18         0
-                text8                              FD7E     FD7E       12         0
-                text7                              FD72     FD72        C         0
-                text6                              FE02     FE02       CC         0
-                text5                              FECE     FECE      132         0
-                text4                              FDD6     FDD6       2C         0
-                text3                              FD58     FD58        8         0
-                text2                              FD60     FD60        8         0
-                text1                              FDBC     FDBC       1A         0
-                text0                              FD68     FD68        A         0
-                cinit                              FD52     FD52        6         0
+                text8                              FD82     FD82       14         0
+                text7                              FD66     FD66        8         0
+                text6                              FD6E     FD6E        8         0
+                text5                              FD96     FD96       1A         0
+                text4                              FD76     FD76        C         0
+                text3                              FE02     FE02       CC         0
+                text2                              FECE     FECE      132         0
+                text1                              FDB0     FDB0       28         0
+                text0                              FDD8     FDD8       2A         0
+                cinit                              FD60     FD60        6         0
 
         CLASS   CONST          
 
@@ -81,7 +77,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1       1C         1
+                cstackCOMRAM                          1        1       25         1
 
         CLASS   ABS1           
 
@@ -138,19 +134,17 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  00001C  00001D         1       1  COMRAM  
-                cinit                          00FD52  000006  00FD58      7EA9       0  CODE    
-                text3                          00FD58  000008  00FD60      7EAC       0  CODE    
-                text2                          00FD60  000008  00FD68      7EB0       0  CODE    
-                text0                          00FD68  00000A  00FD72      7EB4       0  CODE    
-                text7                          00FD72  00000C  00FD7E      7EB9       0  CODE    
-                text8                          00FD7E  000012  00FD90      7EBF       0  CODE    
-                text10                         00FD90  000014  00FDA4      7EC8       0  CODE    
-                text9                          00FDA4  000018  00FDBC      7ED2       0  CODE    
-                text1                          00FDBC  00001A  00FDD6      7EDE       0  CODE    
-                text4                          00FDD6  00002C  00FE02      7EEB       0  CODE    
-                text6                          00FE02  0000CC  00FECE      7F01       0  CODE    
-                text5                          00FECE  000132  010000      7F67       0  CODE    
+                cstackCOMRAM                   000001  000025  000026         1       1  COMRAM  
+                cinit                          00FD60  000006  00FD66      7EB0       0  CODE    
+                text7                          00FD66  000008  00FD6E      7EB3       0  CODE    
+                text6                          00FD6E  000008  00FD76      7EB7       0  CODE    
+                text4                          00FD76  00000C  00FD82      7EBB       0  CODE    
+                text8                          00FD82  000014  00FD96      7EC1       0  CODE    
+                text5                          00FD96  00001A  00FDB0      7ECB       0  CODE    
+                text1                          00FDB0  000028  00FDD8      7ED8       0  CODE    
+                text0                          00FDD8  00002A  00FE02      7EEC       0  CODE    
+                text3                          00FE02  0000CC  00FECE      7F01       0  CODE    
+                text2                          00FECE  000132  010000      7F67       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -174,15 +168,15 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           00001D-000F7F              F63
-        CODE             000004-00FD51             FD4E
-        COMRAM           00001D-00007F               63
-        CONST            000004-00FD51             FD4E
+        BIGRAM           000026-000F7F              F5A
+        CODE             000004-00FD5F             FD5C
+        COMRAM           000026-00007F               5A
+        CONST            000004-00FD5F             FD5C
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      001000-00FD51             ED52
+        MEDIUMCONST      001000-00FD5F             ED60
         RAM              000080-000F7F              100
         SFR              000F80-000FFF               80
-        SMALLCONST       001000-00FD51              100
+        SMALLCONST       001000-00FD5F              100
         STACK            000080-000F7F              F00
 
                                   Symbol Table
@@ -269,7 +263,7 @@ __Hrparam                 rparam       000000
 __Hsfr                    sfr          000000
 __Hsmallconst             smallconst   000000
 __Hspace_0                (abs)        30000E
-__Hspace_1                (abs)        00001D
+__Hspace_1                (abs)        000026
 __Hspace_2                (abs)        000000
 __Hstack                  stack        000000
 __Hstruct                 struct       000000
@@ -277,7 +271,6 @@ __Htemp                   temp         000000
 __Htext                   text         000000
 __Htext0                  text0        000000
 __Htext1                  text1        000000
-__Htext10                 text10       000000
 __Htext2                  text2        000000
 __Htext3                  text3        000000
 __Htext4                  text4        000000
@@ -285,7 +278,6 @@ __Htext5                  text5        000000
 __Htext6                  text6        000000
 __Htext7                  text7        000000
 __Htext8                  text8        000000
-__Htext9                  text9        000000
 __LRAM                    (abs)        000001
 __Labs1                   abs1         000000
 __Lbank0                  bank0        000000
@@ -354,7 +346,6 @@ __Ltemp                   temp         000000
 __Ltext                   text         000000
 __Ltext0                  text0        000000
 __Ltext1                  text1        000000
-__Ltext10                 text10       000000
 __Ltext2                  text2        000000
 __Ltext3                  text3        000000
 __Ltext4                  text4        000000
@@ -362,11 +353,10 @@ __Ltext5                  text5        000000
 __Ltext6                  text6        000000
 __Ltext7                  text7        000000
 __Ltext8                  text8        000000
-__Ltext9                  text9        000000
 __S0                      (abs)        30000E
-__S1                      (abs)        00001D
+__S1                      (abs)        000026
 __S2                      (abs)        000000
-___aldiv                  text6        00FE02
+___aldiv                  text3        00FE02
 ___aldiv@counter          cstackCOMRAM 000009
 ___aldiv@dividend         cstackCOMRAM 000001
 ___aldiv@divisor          cstackCOMRAM 000005
@@ -379,66 +369,61 @@ ___rparam_used            (abs)        000001
 ___sp                     stack        000000
 __accesstop               (abs)        000080
 __activetblptr            (abs)        000000
-__end_of___aldiv          text6        00FECE
-__end_of__initialization  cinit        00FD52
-__end_of_blink            text10       00FDA4
-__end_of_error            text8        00FD90
-__end_of_init             text4        00FE02
-__end_of_loop             text1        00FDD6
-__end_of_main             text0        00FD72
-__end_of_port_init        text7        00FD7E
-__end_of_uart_data_ready  text3        00FD60
-__end_of_uart_init        text5        010000
-__end_of_uart_read        text2        00FD68
-__end_of_wait             text9        00FDBC
-__initialization          cinit        00FD52
+__end_of___aldiv          text3        00FECE
+__end_of__initialization  cinit        00FD60
+__end_of_blink            text8        00FD96
+__end_of_loop             text5        00FDB0
+__end_of_main             text0        00FE02
+__end_of_port_init        text4        00FD82
+__end_of_system_init      text1        00FDD8
+__end_of_uart_data_ready  text7        00FD6E
+__end_of_uart_init        text2        010000
+__end_of_uart_read        text6        00FD76
+__initialization          cinit        00FD60
 __mediumconst             mediumconst  000000
-__pcinit                  cinit        00FD52
+__pcinit                  cinit        00FD60
 __pcstackCOMRAM           cstackCOMRAM 000001
-__ptext0                  text0        00FD68
-__ptext1                  text1        00FDBC
-__ptext10                 text10       00FD90
-__ptext2                  text2        00FD60
-__ptext3                  text3        00FD58
-__ptext4                  text4        00FDD6
-__ptext5                  text5        00FECE
-__ptext6                  text6        00FE02
-__ptext7                  text7        00FD72
-__ptext8                  text8        00FD7E
-__ptext9                  text9        00FDA4
+__ptext0                  text0        00FDD8
+__ptext1                  text1        00FDB0
+__ptext2                  text2        00FECE
+__ptext3                  text3        00FE02
+__ptext4                  text4        00FD76
+__ptext5                  text5        00FD96
+__ptext6                  text6        00FD6E
+__ptext7                  text7        00FD66
+__ptext8                  text8        00FD82
 __ramtop                  ramtop       001000
 __size_of___aldiv         (abs)        000000
 __size_of_blink           (abs)        000000
-__size_of_error           (abs)        000000
-__size_of_init            (abs)        000000
 __size_of_loop            (abs)        000000
 __size_of_main            (abs)        000000
 __size_of_port_init       (abs)        000000
+__size_of_system_init     (abs)        000000
 __size_of_uart_data_ready (abs)        000000
 __size_of_uart_init       (abs)        000000
 __size_of_uart_read       (abs)        000000
-__size_of_wait            (abs)        000000
 __smallconst              smallconst   000000
-_blink                    text10       00FD90
-_error                    text8        00FD7E
-_init                     text4        00FDD6
-_loop                     text1        00FDBC
-_main                     text0        00FD68
-_port_init                text7        00FD72
-_uart_data_ready          text3        00FD58
-_uart_init                text5        00FECE
-_uart_read                text2        00FD60
-_wait                     text9        00FDA4
-end_of_initialization     cinit        00FD52
+_blink                    text8        00FD82
+_loop                     text5        00FD96
+_main                     text0        00FDD8
+_port_init                text4        00FD76
+_system_init              text1        00FDB0
+_uart_data_ready          text7        00FD66
+_uart_init                text2        00FECE
+_uart_read                text6        00FD6E
+end_of_initialization     cinit        00FD60
 intlevel0                 text         000000
 intlevel1                 text         000000
 intlevel2                 text         000000
 intlevel3                 text         000000
 loop@b                    cstackCOMRAM 000002
+main@MIDI_BAUD_RATE       cstackCOMRAM 000022
 stackhi                   (abs)        000F7F
 stacklo                   (abs)        000080
 start                     init         000000
-start_initialization      cinit        00FD52
+start_initialization      cinit        00FD60
+system_init@baudrate      cstackCOMRAM 00001D
+system_init@status        cstackCOMRAM 000021
 uart_init@baudrate        cstackCOMRAM 00000F
 uart_init@x               cstackCOMRAM 00001B
 
@@ -447,11 +432,11 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 112 in file "main.c"
+		line 227 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-		None
+  MIDI_BAUD_RA    4   33[COMRAM] const long 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -462,116 +447,26 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
  Hardware stack levels required when called:    3
  This function calls:
-		_init
 		_loop
+		_system_init
  This function is called by:
 		Startup code after reset
  This function uses a non-reentrant model
 
 
- *************** function _loop *****************
+ *************** function _system_init *****************
  Defined at:
-		line 104 in file "main.c"
+		line 170 in file "main.c"
  Parameters:    Size  Location     Type
-		None
+  baudrate        4   28[COMRAM] long 
  Auto vars:     Size  Location     Type
-  b               1    1[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		_blink
-		_uart_data_ready
-		_uart_read
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _uart_read *****************
- Defined at:
-		line 62 in file "main.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_loop
- This function uses a non-reentrant model
-
-
- *************** function _uart_data_ready *****************
- Defined at:
-		line 55 in file "main.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_loop
- This function uses a non-reentrant model
-
-
- *************** function _init *****************
- Defined at:
-		line 76 in file "main.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
+  status          1   32[COMRAM] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
  Registers used:
@@ -581,15 +476,14 @@ Total ram usage:        0 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
+      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        5 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    2
  This function calls:
-		_error
 		_port_init
 		_uart_init
  This function is called by:
@@ -599,9 +493,9 @@ Total ram usage:        0 bytes
 
  *************** function _uart_init *****************
  Defined at:
-		line 32 in file "main.c"
+		line 78 in file "main.c"
  Parameters:    Size  Location     Type
-  baudrate        4   14[COMRAM] const long 
+  baudrate        4   14[COMRAM] long 
  Auto vars:     Size  Location     Type
   x               2   26[COMRAM] unsigned int 
  Return value:  Size  Location     Type
@@ -623,7 +517,7 @@ Total ram usage:       14 bytes
  This function calls:
 		___aldiv
  This function is called by:
-		_init
+		_system_init
  This function uses a non-reentrant model
 
 
@@ -661,7 +555,7 @@ Total ram usage:       14 bytes
 
  *************** function _port_init *****************
  Defined at:
-		line 68 in file "main.c"
+		line 150 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -684,21 +578,53 @@ Total ram usage:        0 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_init
+		_system_init
  This function uses a non-reentrant model
 
 
- *************** function _error *****************
+ *************** function _loop *****************
  Defined at:
-		line 95 in file "main.c"
+		line 212 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  b               1    1[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_blink
+		_uart_data_ready
+		_uart_read
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _uart_read *****************
+ Defined at:
+		line 134 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  1    wreg      void 
+                  1    wreg      unsigned char 
  Registers used:
-		wreg, cstack
+		wreg, status,2
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -710,24 +636,22 @@ Total ram usage:        0 bytes
       Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        0 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    1
  This function calls:
-		_blink
-		_wait
+		Nothing
  This function is called by:
-		_init
+		_loop
  This function uses a non-reentrant model
 
 
- *************** function _wait *****************
+ *************** function _uart_data_ready *****************
  Defined at:
-		line 91 in file "main.c"
+		line 109 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  1    wreg      void 
+                  1    wreg      unsigned char 
  Registers used:
 		wreg
  Tracked objects:
@@ -737,20 +661,20 @@ Total ram usage:        0 bytes
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
  Hardware stack levels used:    1
  This function calls:
 		Nothing
  This function is called by:
-		_error
+		_loop
  This function uses a non-reentrant model
 
 
  *************** function _blink *****************
  Defined at:
-		line 85 in file "main.c"
+		line 187 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -773,8 +697,8 @@ Total ram usage:        1 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_error
 		_loop
+		_error
  This function uses a non-reentrant model
 
 
@@ -788,21 +712,19 @@ Module		Function		Class		Link	Load	Size
 /Applications/microchip/xc8/v1.45/sources/common/aldiv.c estimated size: 205
 
 shared
-		__initialization		CODE           	FD52	0000	1
+		__initialization		CODE           	FD60	0000	1
 
 shared estimated size: 1
 
 main.c
-		_loop          		CODE           	FDBC	0000	27
-		_init          		CODE           	FDD6	0000	45
-		_main          		CODE           	FD68	0000	11
-		_uart_read     		CODE           	FD60	0000	9
-		_uart_data_ready		CODE           	FD58	0000	9
+		_loop          		CODE           	FD96	0000	27
+		_system_init   		CODE           	FDB0	0000	41
+		_main          		CODE           	FDD8	0000	43
+		_uart_read     		CODE           	FD6E	0000	9
+		_uart_data_ready		CODE           	FD66	0000	9
 		_uart_init     		CODE           	FECE	0000	307
-		_error         		CODE           	FD7E	0000	19
-		_port_init     		CODE           	FD72	0000	13
-		_blink         		CODE           	FD90	0000	21
-		_wait          		CODE           	FDA4	0000	25
+		_port_init     		CODE           	FD76	0000	13
+		_blink         		CODE           	FD82	0000	21
 
-main.c estimated size: 486
+main.c estimated size: 470
 
