@@ -23,9 +23,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
 "533
 [v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
-"74 main.c
-[v _error `(v ~T0 @X0 0 ef ]
-"539 /Applications/microchip/xc8/v1.45/include/pic18f4620.h
+"539
 [s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S22 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
 "549
@@ -3344,299 +3342,320 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-"19 main.c
+"43 main.c
 [p x OSC=HS ]
-"20
+"44
 [p x MCLRE=OFF ]
-"21
+"45
 [p x PWRT=OFF ]
-"22
+"46
 [p x PBADEN=OFF ]
-"23
+"47
 [p x WDT=OFF ]
-"24
+"48
 [p x DEBUG=OFF ]
-"25
+"49
 [p x LVP=OFF ]
-"26
+"50
 [p x BOREN=OFF ]
-"32
-[v _uart_init `(uc ~T0 @X0 1 ef1`Cl ]
+"78
+[v _uart_init `(uc ~T0 @X0 1 ef1`l ]
 {
-[; ;main.c: 32: char uart_init(const long int baudrate) {
+[; ;main.c: 78: char uart_init(long int baudrate) {
 [e :U _uart_init ]
-[v _baudrate `Cl ~T0 @X0 1 r1 ]
+[v _baudrate `l ~T0 @X0 1 r1 ]
 [f ]
-"33
+"79
 [v _x `ui ~T0 @X0 1 a ]
-[; ;main.c: 33: unsigned int x;
-[; ;main.c: 34: x = (8000000 - (baudrate * 64)) / (baudrate * 64);
-"34
+[; ;main.c: 79: unsigned int x;
+[; ;main.c: 80: x = (8000000 - (baudrate * 64)) / (baudrate * 64);
+"80
 [e = _x -> / - -> 8000000 `l * _baudrate -> -> 64 `i `l * _baudrate -> -> 64 `i `l `ui ]
-[; ;main.c: 35: if (x > 255) {
-"35
+[; ;main.c: 81: if (x > 255) {
+"81
 [e $ ! > _x -> -> 255 `i `ui 301  ]
 {
-[; ;main.c: 36: x = (8000000 - (baudrate * 16)) / (baudrate * 16);
-"36
+[; ;main.c: 82: x = (8000000 - (baudrate * 16)) / (baudrate * 16);
+"82
 [e = _x -> / - -> 8000000 `l * _baudrate -> -> 16 `i `l * _baudrate -> -> 16 `i `l `ui ]
-[; ;main.c: 37: BRGH = 1;
-"37
+[; ;main.c: 83: BRGH = 1;
+"83
 [e = _BRGH -> -> 1 `i `b ]
-"38
+"84
 }
 [e :U 301 ]
-[; ;main.c: 38: }
-[; ;main.c: 40: if (x < 256) {
-"40
+[; ;main.c: 84: }
+[; ;main.c: 86: if (x < 256) {
+"86
 [e $ ! < _x -> -> 256 `i `ui 302  ]
 {
-[; ;main.c: 41: SPBRG = x;
-"41
+[; ;main.c: 87: SPBRG = x;
+"87
 [e = _SPBRG -> _x `uc ]
-[; ;main.c: 42: SYNC = 0;
-"42
+[; ;main.c: 88: SYNC = 0;
+"88
 [e = _SYNC -> -> 0 `i `b ]
-[; ;main.c: 43: SPEN = 1;
-"43
+[; ;main.c: 89: SPEN = 1;
+"89
 [e = _SPEN -> -> 1 `i `b ]
-[; ;main.c: 44: TRISC7 = 1;
-"44
+[; ;main.c: 90: TRISC7 = 1;
+"90
 [e = _TRISC7 -> -> 1 `i `b ]
-[; ;main.c: 45: TRISC6 = 1;
-"45
+[; ;main.c: 91: TRISC6 = 1;
+"91
 [e = _TRISC6 -> -> 1 `i `b ]
-[; ;main.c: 46: CREN = 1;
-"46
+[; ;main.c: 92: CREN = 1;
+"92
 [e = _CREN -> -> 1 `i `b ]
-[; ;main.c: 47: TXEN = 1;
-"47
+[; ;main.c: 93: TXEN = 1;
+"93
 [e = _TXEN -> -> 1 `i `b ]
-[; ;main.c: 48: return 1;
-"48
+[; ;main.c: 94: return 1;
+"94
 [e ) -> -> 1 `i `uc ]
 [e $UE 300  ]
-"49
+"95
 }
 [e :U 302 ]
-[; ;main.c: 49: }
-[; ;main.c: 50: return 0;
-"50
+[; ;main.c: 95: }
+[; ;main.c: 96: return 0;
+"96
 [e ) -> -> 0 `i `uc ]
 [e $UE 300  ]
-[; ;main.c: 51: }
-"51
+[; ;main.c: 97: }
+"97
 [e :UE 300 ]
 }
-"55
+"109
 [v _uart_data_ready `(uc ~T0 @X0 1 ef ]
 {
-[; ;main.c: 55: char uart_data_ready() {
+[; ;main.c: 109: char uart_data_ready() {
 [e :U _uart_data_ready ]
 [f ]
-[; ;main.c: 56: return RCIF;
-"56
+[; ;main.c: 110: return RCIF;
+"110
 [e ) -> -> _RCIF `i `uc ]
 [e $UE 303  ]
-[; ;main.c: 57: }
-"57
+[; ;main.c: 111: }
+"111
 [e :UE 303 ]
 }
-"62
+"134
 [v _uart_read `(uc ~T0 @X0 1 ef ]
 {
-[; ;main.c: 62: char uart_read() {
+[; ;main.c: 134: char uart_read() {
 [e :U _uart_read ]
 [f ]
-[; ;main.c: 63: while (!RCIF);
-"63
+[; ;main.c: 135: while (!RCIF);
+"135
 [e $U 305  ]
 [e :U 306 ]
 [e :U 305 ]
 [e $ ! _RCIF 306  ]
 [e :U 307 ]
-[; ;main.c: 64: return RCREG;
-"64
+[; ;main.c: 136: return RCREG;
+"136
 [e ) _RCREG ]
 [e $UE 304  ]
-[; ;main.c: 65: }
-"65
+[; ;main.c: 137: }
+"137
 [e :UE 304 ]
 }
-"68
+"150
 [v _port_init `(uc ~T0 @X0 1 ef ]
 {
-[; ;main.c: 68: char port_init() {
+[; ;main.c: 150: char port_init() {
 [e :U _port_init ]
 [f ]
-[; ;main.c: 69: TRISD = 0;
-"69
+[; ;main.c: 152: TRISD = 0;
+"152
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;main.c: 70: PORTD = 0;
-"70
+[; ;main.c: 155: PORTD = 0;
+"155
 [e = _PORTD -> -> 0 `i `uc ]
-[; ;main.c: 71: return 1;
-"71
+[; ;main.c: 159: return 1;
+"159
 [e ) -> -> 1 `i `uc ]
 [e $UE 308  ]
-[; ;main.c: 72: }
-"72
+[; ;main.c: 160: }
+"160
 [e :UE 308 ]
 }
-[; ;main.c: 74: void error();
-"76
-[v _init `(uc ~T0 @X0 1 ef ]
+[; ;main.c: 166: void error();
+"170
+[v _system_init `(uc ~T0 @X0 1 ef1`l ]
 {
-[; ;main.c: 76: char init() {
-[e :U _init ]
+[; ;main.c: 170: char system_init(long baudrate) {
+[e :U _system_init ]
+[v _baudrate `l ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 77: if (!port_init()) {
-"77
-[e $ ! ! != -> ( _port_init ..  `i -> -> -> 0 `i `uc `i 310  ]
+"171
+[v _status `uc ~T0 @X0 1 a ]
+[; ;main.c: 171: char status = 0;
+[e = _status -> -> 0 `i `uc ]
+[; ;main.c: 173: status = port_init();
+"173
+[e = _status ( _port_init ..  ]
+[; ;main.c: 174: if (!status) {
+"174
+[e $ ! ! != -> _status `i -> -> -> 0 `i `uc `i 310  ]
 {
-[; ;main.c: 78: error();
-"78
-[e ( _error ..  ]
-"79
+[; ;main.c: 175: return status;
+"175
+[e ) _status ]
+[e $UE 309  ]
+"176
 }
 [e :U 310 ]
-[; ;main.c: 79: }
-[; ;main.c: 80: if (!uart_init(31250)) {
-"80
-[e $ ! ! != -> ( _uart_init (1 -> -> 31250 `i `l `i -> -> -> 0 `i `uc `i 311  ]
+[; ;main.c: 176: }
+[; ;main.c: 178: status = uart_init(baudrate);
+"178
+[e = _status ( _uart_init (1 _baudrate ]
+[; ;main.c: 179: if (!status) {
+"179
+[e $ ! ! != -> _status `i -> -> -> 0 `i `uc `i 311  ]
 {
-[; ;main.c: 81: error();
-"81
-[e ( _error ..  ]
-"82
+[; ;main.c: 180: return status;
+"180
+[e ) _status ]
+[e $UE 309  ]
+"181
 }
 [e :U 311 ]
-[; ;main.c: 82: }
-[; ;main.c: 83: }
-"83
+[; ;main.c: 181: }
+[; ;main.c: 183: return 1;
+"183
+[e ) -> -> 1 `i `uc ]
+[e $UE 309  ]
+[; ;main.c: 184: }
+"184
 [e :UE 309 ]
 }
-"85
+"187
 [v _blink `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 85: void blink() {
+[; ;main.c: 187: void blink() {
 [e :U _blink ]
 [f ]
-[; ;main.c: 86: PORTDbits.RD1 = 1;
-"86
+[; ;main.c: 188: PORTDbits.RD1 = 1;
+"188
 [e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 87: _delay((unsigned long)((1)*(8000000/4000.0)));
-"87
+[; ;main.c: 189: _delay((unsigned long)((1)*(8000000/4000.0)));
+"189
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 88: PORTDbits.RD1 = 0;
-"88
+[; ;main.c: 190: PORTDbits.RD1 = 0;
+"190
 [e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 89: }
-"89
+[; ;main.c: 191: }
+"191
 [e :UE 312 ]
 }
-"91
+"194
 [v _wait `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 91: void wait() {
+[; ;main.c: 194: void wait() {
 [e :U _wait ]
 [f ]
-[; ;main.c: 92: _delay((unsigned long)((1000)*(8000000/4000.0)));
-"92
+[; ;main.c: 195: _delay((unsigned long)((1000)*(8000000/4000.0)));
+"195
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 93: }
-"93
+[; ;main.c: 196: }
+"196
 [e :UE 313 ]
 }
-"95
+"200
 [v _error `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 95: void error() {
+[; ;main.c: 200: void error() {
 [e :U _error ]
 [f ]
-[; ;main.c: 96: for (;;) {
-"96
+[; ;main.c: 201: for (;;) {
+"201
 {
 [e :U 315 ]
 {
-[; ;main.c: 97: blink();
-"97
+[; ;main.c: 202: blink();
+"202
 [e ( _blink ..  ]
-[; ;main.c: 98: blink();
-"98
+[; ;main.c: 203: blink();
+"203
 [e ( _blink ..  ]
-[; ;main.c: 99: blink();
-"99
+[; ;main.c: 204: blink();
+"204
 [e ( _blink ..  ]
-[; ;main.c: 100: wait();
-"100
+[; ;main.c: 205: wait();
+"205
 [e ( _wait ..  ]
-"101
+"206
 }
-[; ;main.c: 101: }
+[; ;main.c: 206: }
 [e $U 315  ]
 [e :U 316 ]
 }
-[; ;main.c: 102: }
-"102
+[; ;main.c: 207: }
+"207
 [e :UE 314 ]
 }
-"104
+"212
 [v _loop `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 104: void loop() {
+[; ;main.c: 212: void loop() {
 [e :U _loop ]
 [f ]
-"105
+"213
 [v _b `uc ~T0 @X0 1 a ]
-[; ;main.c: 105: char b = 0;
+[; ;main.c: 213: char b = 0;
 [e = _b -> -> 0 `i `uc ]
-[; ;main.c: 106: if (uart_data_ready()) {
-"106
+[; ;main.c: 214: if (uart_data_ready()) {
+"214
 [e $ ! != -> ( _uart_data_ready ..  `i -> -> -> 0 `i `uc `i 319  ]
 {
-[; ;main.c: 107: b = uart_read();
-"107
+[; ;main.c: 215: b = uart_read();
+"215
 [e = _b ( _uart_read ..  ]
-[; ;main.c: 108: blink();
-"108
+[; ;main.c: 221: blink();
+"221
 [e ( _blink ..  ]
-"109
+"222
 }
 [e :U 319 ]
-[; ;main.c: 109: }
-[; ;main.c: 110: }
-"110
+[; ;main.c: 222: }
+[; ;main.c: 223: }
+"223
 [e :UE 318 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"112
+"227
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 112: void main(void) {
+[; ;main.c: 227: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 113: init();
-"113
-[e ( _init ..  ]
-[; ;main.c: 114: for (;;) {
-"114
+"228
+[v _MIDI_BAUD_RATE `Cl ~T0 @X0 1 a ]
+[; ;main.c: 228: const long MIDI_BAUD_RATE = 31250;
+[e = _MIDI_BAUD_RATE -> -> 31250 `i `l ]
+[; ;main.c: 230: system_init(MIDI_BAUD_RATE);
+"230
+[e ( _system_init (1 _MIDI_BAUD_RATE ]
+[; ;main.c: 232: for (;;) {
+"232
 {
 [e :U 321 ]
 {
-[; ;main.c: 115: loop();
-"115
+[; ;main.c: 233: loop();
+"233
 [e ( _loop ..  ]
-"116
+"234
 }
-[; ;main.c: 116: }
+[; ;main.c: 234: }
 [e $U 321  ]
 [e :U 322 ]
 }
-[; ;main.c: 117: return;
-"117
+[; ;main.c: 236: return;
+"236
 [e $UE 320  ]
-[; ;main.c: 118: }
-"118
+[; ;main.c: 237: }
+"237
 [e :UE 320 ]
 }

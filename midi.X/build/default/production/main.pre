@@ -4562,7 +4562,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 extern __nonreentrant void _delay3(unsigned char);
 
 
-# 19 "main.c"
+# 43 "main.c"
 #pragma config OSC = HS
 #pragma config MCLRE = OFF
 #pragma config PWRT = OFF
@@ -4572,8 +4572,8 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config LVP = OFF
 #pragma config BOREN = 0
 
-# 32
-char uart_init(const long int baudrate) {
+# 78
+char uart_init(long int baudrate) {
 unsigned int x;
 x = (8000000 - (baudrate * 64)) / (baudrate * 64);
 if (x > 255) {
@@ -4594,37 +4594,51 @@ return 1;
 return 0;
 }
 
-
-
+# 109
 char uart_data_ready() {
 return RCIF;
 }
 
-
-
-
+# 134
 char uart_read() {
 while (!RCIF);
 return RCREG;
 }
 
-
+# 150
 char port_init() {
+
 TRISD = 0;
+
+
 PORTD = 0;
+
+
+
 return 1;
 }
 
+# 166
 void error();
 
-char init() {
-if (!port_init()) {
-error();
+
+
+char system_init(long baudrate) {
+char status = 0;
+
+status = port_init();
+if (!status) {
+return status;
 }
-if (!uart_init(31250)) {
-error();
+
+status = uart_init(baudrate);
+if (!status) {
+return status;
 }
+
+return 1;
 }
+
 
 void blink() {
 PORTDbits.RD1 = 1;
@@ -4632,9 +4646,12 @@ _delay((unsigned long)((1)*(8000000/4000.0)));
 PORTDbits.RD1 = 0;
 }
 
+
 void wait() {
 _delay((unsigned long)((1000)*(8000000/4000.0)));
 }
+
+
 
 void error() {
 for (;;) {
@@ -4645,18 +4662,29 @@ wait();
 }
 }
 
+
+
+
 void loop() {
 char b = 0;
 if (uart_data_ready()) {
 b = uart_read();
+
+# 221
 blink();
 }
 }
 
+
+
 void main(void) {
-init();
+const long MIDI_BAUD_RATE = 31250;
+
+system_init(MIDI_BAUD_RATE);
+
 for (;;) {
 loop();
 }
+
 return;
 }
