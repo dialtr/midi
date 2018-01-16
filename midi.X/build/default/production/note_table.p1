@@ -1,0 +1,393 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"13 note_table.c
+[v _MIDI_NOTE_FREQUENCY_TABLE `Ci ~T0 @X0 -> 0 `x e ]
+[i _MIDI_NOTE_FREQUENCY_TABLE
+:U ..
+"14
+-> 8 `i
+"15
+-> 9 `i
+"16
+-> 9 `i
+"17
+-> 10 `i
+"18
+-> 10 `i
+"19
+-> 11 `i
+"20
+-> 12 `i
+"21
+-> 12 `i
+"22
+-> 13 `i
+"23
+-> 14 `i
+"24
+-> 15 `i
+"25
+-> 15 `i
+"26
+-> 16 `i
+"27
+-> 17 `i
+"28
+-> 18 `i
+"29
+-> 19 `i
+"30
+-> 21 `i
+"31
+-> 22 `i
+"32
+-> 23 `i
+"33
+-> 24 `i
+"34
+-> 26 `i
+"35
+-> 28 `i
+"36
+-> 29 `i
+"37
+-> 31 `i
+"38
+-> 33 `i
+"39
+-> 35 `i
+"40
+-> 37 `i
+"41
+-> 39 `i
+"42
+-> 41 `i
+"43
+-> 44 `i
+"44
+-> 46 `i
+"45
+-> 49 `i
+"46
+-> 52 `i
+"47
+-> 55 `i
+"48
+-> 58 `i
+"49
+-> 62 `i
+"50
+-> 65 `i
+"51
+-> 69 `i
+"52
+-> 73 `i
+"53
+-> 78 `i
+"54
+-> 82 `i
+"55
+-> 87 `i
+"56
+-> 92 `i
+"57
+-> 98 `i
+"58
+-> 104 `i
+"59
+-> 110 `i
+"60
+-> 117 `i
+"61
+-> 123 `i
+"62
+-> 131 `i
+"63
+-> 139 `i
+"64
+-> 147 `i
+"65
+-> 156 `i
+"66
+-> 165 `i
+"67
+-> 175 `i
+"68
+-> 185 `i
+"69
+-> 196 `i
+"70
+-> 208 `i
+"71
+-> 220 `i
+"72
+-> 233 `i
+"73
+-> 247 `i
+"74
+-> 262 `i
+"75
+-> 277 `i
+"76
+-> 294 `i
+"77
+-> 311 `i
+"78
+-> 330 `i
+"79
+-> 349 `i
+"80
+-> 370 `i
+"81
+-> 392 `i
+"82
+-> 415 `i
+"83
+-> 440 `i
+"84
+-> 466 `i
+"85
+-> 494 `i
+"86
+-> 523 `i
+"87
+-> 554 `i
+"88
+-> 587 `i
+"89
+-> 622 `i
+"90
+-> 659 `i
+"91
+-> 698 `i
+"92
+-> 740 `i
+"93
+-> 784 `i
+"94
+-> 831 `i
+"95
+-> 880 `i
+"96
+-> 932 `i
+"97
+-> 988 `i
+"98
+-> 1047 `i
+"99
+-> 1109 `i
+"100
+-> 1175 `i
+"101
+-> 1245 `i
+"102
+-> 1319 `i
+"103
+-> 1397 `i
+"104
+-> 1480 `i
+"105
+-> 1568 `i
+"106
+-> 1661 `i
+"107
+-> 1760 `i
+"108
+-> 1865 `i
+"109
+-> 1976 `i
+"110
+-> 2093 `i
+"111
+-> 2217 `i
+"112
+-> 2349 `i
+"113
+-> 2489 `i
+"114
+-> 2637 `i
+"115
+-> 2794 `i
+"116
+-> 2960 `i
+"117
+-> 3136 `i
+"118
+-> 3322 `i
+"119
+-> 3520 `i
+"120
+-> 3729 `i
+"121
+-> 3951 `i
+"122
+-> 4186 `i
+"123
+-> 4435 `i
+"124
+-> 4699 `i
+"125
+-> 4978 `i
+"126
+-> 5274 `i
+"127
+-> 5588 `i
+"128
+-> 5920 `i
+"129
+-> 6272 `i
+"130
+-> 6645 `i
+"131
+-> 7040 `i
+"132
+-> 7459 `i
+"133
+-> 7902 `i
+"134
+-> 8372 `i
+"135
+-> 8870 `i
+"136
+-> 9397 `i
+"137
+-> 9956 `i
+"138
+-> 10548 `i
+"139
+-> 11175 `i
+"140
+-> 11840 `i
+"142
+-> 12544 `i
+..
+]
+[; ;note_table.c: 13: const int MIDI_NOTE_FREQUENCY_TABLE[] = {
+[; ;note_table.c: 14: 8,
+[; ;note_table.c: 15: 9,
+[; ;note_table.c: 16: 9,
+[; ;note_table.c: 17: 10,
+[; ;note_table.c: 18: 10,
+[; ;note_table.c: 19: 11,
+[; ;note_table.c: 20: 12,
+[; ;note_table.c: 21: 12,
+[; ;note_table.c: 22: 13,
+[; ;note_table.c: 23: 14,
+[; ;note_table.c: 24: 15,
+[; ;note_table.c: 25: 15,
+[; ;note_table.c: 26: 16,
+[; ;note_table.c: 27: 17,
+[; ;note_table.c: 28: 18,
+[; ;note_table.c: 29: 19,
+[; ;note_table.c: 30: 21,
+[; ;note_table.c: 31: 22,
+[; ;note_table.c: 32: 23,
+[; ;note_table.c: 33: 24,
+[; ;note_table.c: 34: 26,
+[; ;note_table.c: 35: 28,
+[; ;note_table.c: 36: 29,
+[; ;note_table.c: 37: 31,
+[; ;note_table.c: 38: 33,
+[; ;note_table.c: 39: 35,
+[; ;note_table.c: 40: 37,
+[; ;note_table.c: 41: 39,
+[; ;note_table.c: 42: 41,
+[; ;note_table.c: 43: 44,
+[; ;note_table.c: 44: 46,
+[; ;note_table.c: 45: 49,
+[; ;note_table.c: 46: 52,
+[; ;note_table.c: 47: 55,
+[; ;note_table.c: 48: 58,
+[; ;note_table.c: 49: 62,
+[; ;note_table.c: 50: 65,
+[; ;note_table.c: 51: 69,
+[; ;note_table.c: 52: 73,
+[; ;note_table.c: 53: 78,
+[; ;note_table.c: 54: 82,
+[; ;note_table.c: 55: 87,
+[; ;note_table.c: 56: 92,
+[; ;note_table.c: 57: 98,
+[; ;note_table.c: 58: 104,
+[; ;note_table.c: 59: 110,
+[; ;note_table.c: 60: 117,
+[; ;note_table.c: 61: 123,
+[; ;note_table.c: 62: 131,
+[; ;note_table.c: 63: 139,
+[; ;note_table.c: 64: 147,
+[; ;note_table.c: 65: 156,
+[; ;note_table.c: 66: 165,
+[; ;note_table.c: 67: 175,
+[; ;note_table.c: 68: 185,
+[; ;note_table.c: 69: 196,
+[; ;note_table.c: 70: 208,
+[; ;note_table.c: 71: 220,
+[; ;note_table.c: 72: 233,
+[; ;note_table.c: 73: 247,
+[; ;note_table.c: 74: 262,
+[; ;note_table.c: 75: 277,
+[; ;note_table.c: 76: 294,
+[; ;note_table.c: 77: 311,
+[; ;note_table.c: 78: 330,
+[; ;note_table.c: 79: 349,
+[; ;note_table.c: 80: 370,
+[; ;note_table.c: 81: 392,
+[; ;note_table.c: 82: 415,
+[; ;note_table.c: 83: 440,
+[; ;note_table.c: 84: 466,
+[; ;note_table.c: 85: 494,
+[; ;note_table.c: 86: 523,
+[; ;note_table.c: 87: 554,
+[; ;note_table.c: 88: 587,
+[; ;note_table.c: 89: 622,
+[; ;note_table.c: 90: 659,
+[; ;note_table.c: 91: 698,
+[; ;note_table.c: 92: 740,
+[; ;note_table.c: 93: 784,
+[; ;note_table.c: 94: 831,
+[; ;note_table.c: 95: 880,
+[; ;note_table.c: 96: 932,
+[; ;note_table.c: 97: 988,
+[; ;note_table.c: 98: 1047,
+[; ;note_table.c: 99: 1109,
+[; ;note_table.c: 100: 1175,
+[; ;note_table.c: 101: 1245,
+[; ;note_table.c: 102: 1319,
+[; ;note_table.c: 103: 1397,
+[; ;note_table.c: 104: 1480,
+[; ;note_table.c: 105: 1568,
+[; ;note_table.c: 106: 1661,
+[; ;note_table.c: 107: 1760,
+[; ;note_table.c: 108: 1865,
+[; ;note_table.c: 109: 1976,
+[; ;note_table.c: 110: 2093,
+[; ;note_table.c: 111: 2217,
+[; ;note_table.c: 112: 2349,
+[; ;note_table.c: 113: 2489,
+[; ;note_table.c: 114: 2637,
+[; ;note_table.c: 115: 2794,
+[; ;note_table.c: 116: 2960,
+[; ;note_table.c: 117: 3136,
+[; ;note_table.c: 118: 3322,
+[; ;note_table.c: 119: 3520,
+[; ;note_table.c: 120: 3729,
+[; ;note_table.c: 121: 3951,
+[; ;note_table.c: 122: 4186,
+[; ;note_table.c: 123: 4435,
+[; ;note_table.c: 124: 4699,
+[; ;note_table.c: 125: 4978,
+[; ;note_table.c: 126: 5274,
+[; ;note_table.c: 127: 5588,
+[; ;note_table.c: 128: 5920,
+[; ;note_table.c: 129: 6272,
+[; ;note_table.c: 130: 6645,
+[; ;note_table.c: 131: 7040,
+[; ;note_table.c: 132: 7459,
+[; ;note_table.c: 133: 7902,
+[; ;note_table.c: 134: 8372,
+[; ;note_table.c: 135: 8870,
+[; ;note_table.c: 136: 9397,
+[; ;note_table.c: 137: 9956,
+[; ;note_table.c: 138: 10548,
+[; ;note_table.c: 139: 11175,
+[; ;note_table.c: 140: 11840,
+[; ;note_table.c: 141: 12544
+[; ;note_table.c: 142: };

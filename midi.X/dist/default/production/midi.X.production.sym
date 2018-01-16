@@ -1,6 +1,6 @@
 ___aldiv@counter 9 0 COMRAM 1
 __size_of_port_init 0 0 ABS 0
-__end_of_loop FDB0 0 CODE 0
+__end_of_loop FCAE 0 CODE 0
 __S0 30000E 0 ABS 0
 __S1 26 0 ABS 0
 __S2 0 0 ABS 0
@@ -14,12 +14,12 @@ _SYNC 7D64 0 ABS 0
 _CREN 7D5C 0 ABS 0
 _SPEN 7D5F 0 ABS 0
 _TXEN 7D65 0 ABS 0
-_main FDD8 0 CODE 0
+_main FCD6 0 CODE 0
 ___sp 0 0 STACK 2
-_loop FD96 0 CODE 0
+_loop FC94 0 CODE 0
 start 0 0 CODE 0
-__end_of_system_init FDD8 0 CODE 0
-__end_of___aldiv FECE 0 CODE 0
+__end_of_system_init FCD6 0 CODE 0
+__end_of___aldiv FDCC 0 CODE 0
 _RCREG FAE 0 ABS 0
 _TRISD F95 0 ABS 0
 _SPBRG FAF 0 ABS 0
@@ -40,7 +40,7 @@ __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __Hcomram 0 0 ABS 0
 __Lcomram 0 0 ABS 0
-_blink FD82 0 CODE 0
+_blink FC80 0 CODE 0
 __Hsfr 0 0 ABS 0
 __Lsfr 0 0 ABS 0
 __Hbss 0 0 RAM 1
@@ -48,8 +48,8 @@ __Lbss 0 0 RAM 1
 ___param_bank 0 0 ABS 0
 __Hnvrram 0 0 COMRAM 1
 __Lnvrram 0 0 COMRAM 1
-_uart_data_ready FD66 0 CODE 0
-_uart_read FD6E 0 CODE 0
+_uart_data_ready FC5A 0 CODE 0
+_uart_read FC62 0 CODE 0
 _TRISC6 7CA6 0 ABS 0
 _TRISC7 7CA7 0 ABS 0
 __Heeprom_data 0 0 EEDATA 0
@@ -67,10 +67,11 @@ __Hstruct 0 0 COMRAM 1
 __Lstruct 0 0 COMRAM 1
 __Hbigdata 0 0 BIGRAM 1
 __Lbigdata 0 0 BIGRAM 1
-__Hmediumconst 0 0 MEDIUMCONST 0
-__Lmediumconst 0 0 MEDIUMCONST 0
+__Hmediumconst 10000 0 MEDIUMCONST 0
+__Lmediumconst FEFE 0 MEDIUMCONST 0
 __Hfarbss 0 0 FARRAM 0
 __Lfarbss 0 0 FARRAM 0
+__pmediumconst FEFE 0 MEDIUMCONST 0
 __Hintcode 0 0 CODE 0
 __Lintcode 0 0 CODE 0
 __Hfardata 0 0 FARRAM 0
@@ -94,19 +95,19 @@ __Linit 0 0 CODE 0
 __Hintcodelo 0 0 CODE 0
 __Lintcodelo 0 0 CODE 0
 __Hrbss 0 0 COMRAM 1
-__end_of_main FE02 0 CODE 0
+__end_of_main FD00 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 __CFG_OSC$HS 0 0 ABS 0
-end_of_initialization FD60 0 CODE 0
+end_of_initialization FC6A 0 CODE 0
 ___aldiv@sign A 0 COMRAM 1
-__end_of_uart_read FD76 0 CODE 0
-__end_of_uart_data_ready FD6E 0 CODE 0
+__end_of_uart_read FC6A 0 CODE 0
+__end_of_uart_data_ready FC62 0 CODE 0
 _PORTDbits F83 0 ABS 0
 uart_init@baudrate F 0 COMRAM 1
-_uart_init FECE 0 CODE 0
-_port_init FD76 0 CODE 0
+_uart_init FDCC 0 CODE 0
+_port_init FC74 0 CODE 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
 __Hifardata 0 0 CODE 0
@@ -129,7 +130,7 @@ __Hbank6 0 0 ABS 0
 __Lbank6 0 0 ABS 0
 __Hbank7 0 0 ABS 0
 __Lbank7 0 0 ABS 0
-__end_of_uart_init 10000 0 CODE 0
+__end_of_uart_init FEFE 0 CODE 0
 __Hbank8 0 0 ABS 0
 __Lbank8 0 0 ABS 0
 __Htext0 0 0 ABS 0
@@ -138,37 +139,39 @@ __Hbank9 0 0 ABS 0
 __Lbank9 0 0 ABS 0
 __Htext1 0 0 ABS 0
 __Ltext1 0 0 ABS 0
-__ptext0 FDD8 0 CODE 0
+__ptext0 FCD6 0 CODE 0
 __Htext2 0 0 ABS 0
 __Ltext2 0 0 ABS 0
-__ptext1 FDB0 0 CODE 0
+__ptext1 FCAE 0 CODE 0
 __Htext3 0 0 ABS 0
 __Ltext3 0 0 ABS 0
-__ptext2 FECE 0 CODE 0
+__ptext2 FDCC 0 CODE 0
 __Htext4 0 0 ABS 0
 __Ltext4 0 0 ABS 0
-__ptext3 FE02 0 CODE 0
+__ptext3 FD00 0 CODE 0
 __Htext5 0 0 ABS 0
 __Ltext5 0 0 ABS 0
-__ptext4 FD76 0 CODE 0
+__ptext4 FC74 0 CODE 0
 __Htext6 0 0 ABS 0
 __Ltext6 0 0 ABS 0
-__ptext5 FD96 0 CODE 0
+__ptext5 FC94 0 CODE 0
 __Htext7 0 0 ABS 0
 __Ltext7 0 0 ABS 0
-__ptext6 FD6E 0 CODE 0
+__ptext6 FC62 0 CODE 0
 __Htext8 0 0 ABS 0
 __Ltext8 0 0 ABS 0
-__ptext7 FD66 0 CODE 0
-__ptext8 FD82 0 CODE 0
+__ptext7 FC5A 0 CODE 0
+__ptext8 FC80 0 CODE 0
 uart_init@x 1B 0 COMRAM 1
 __size_of_system_init 0 0 ABS 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
-__end_of__initialization FD60 0 CODE 0
+_MIDI_NOTE_FREQUENCY_TABLE FEFF 0 MEDIUMCONST 0
+__end_of_MIDI_NOTE_FREQUENCY_TABLE FFFF 0 MEDIUMCONST 0
+__end_of__initialization FC6A 0 CODE 0
 ___rparam_used 1 0 ABS 0
 __size_of_uart_init 0 0 ABS 0
-_system_init FDB0 0 CODE 0
+_system_init FCAE 0 CODE 0
 system_init@status 21 0 COMRAM 1
 __Hidata 0 0 CODE 0
 __Lidata 0 0 CODE 0
@@ -195,10 +198,10 @@ __Hnvbit 0 0 COMRAM 1
 __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
-___aldiv FE02 0 CODE 0
-__pcinit FD60 0 CODE 0
+___aldiv FD00 0 CODE 0
+__pcinit FC6A 0 CODE 0
 __ramtop 1000 0 RAM 0
-__mediumconst 0 0 MEDIUMCONST 0
+__mediumconst FEFE 0 MEDIUMCONST 0
 __size_of_main 0 0 ABS 0
 __Hconst 0 0 CONST 0
 __Lconst 0 0 CONST 0
@@ -209,7 +212,7 @@ __Hbank10 0 0 ABS 0
 __Lbank10 0 0 ABS 0
 __Hbank11 0 0 ABS 0
 __Lbank11 0 0 ABS 0
-__end_of_port_init FD82 0 CODE 0
+__end_of_port_init FC80 0 CODE 0
 __Hbank12 0 0 ABS 0
 __Lbank12 0 0 ABS 0
 __Hbank13 0 0 ABS 0
@@ -227,7 +230,7 @@ ___aldiv@divisor 5 0 COMRAM 1
 __smallconst 0 0 SMALLCONST 0
 __Hreset_vec 0 0 CODE 0
 __Lreset_vec 0 0 CODE 0
-__end_of_blink FD96 0 CODE 0
+__end_of_blink FC94 0 CODE 0
 __accesstop 80 0 ABS 0
 __size_of___aldiv 0 0 ABS 0
 __Hintcode_body 0 0 ABS 0
@@ -236,120 +239,123 @@ intlevel0 0 0 CODE 0
 intlevel1 0 0 CODE 0
 intlevel2 0 0 CODE 0
 intlevel3 0 0 CODE 0
-start_initialization FD60 0 CODE 0
+start_initialization FC6A 0 CODE 0
 ___aldiv@quotient B 0 COMRAM 1
-__initialization FD60 0 CODE 0
-__activetblptr 0 0 ABS 0
+__initialization FC6A 0 CODE 0
+__activetblptr 2 0 ABS 0
 __CFG_WDT$OFF 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
 ___aldiv@dividend 1 0 COMRAM 1
 %segments
 reset_vec 0 3 CODE 0 0
+mediumconst FEFE FFFF MEDIUMCONST FEFE 0
 config 300000 30000D CONFIG 300000 0
 idloc 200000 200007 IDLOC 200000 0
 cstackCOMRAM 1 25 COMRAM 1 1
-text2 FECE FFFF CODE FECE 0
-text3 FE02 FECD CODE FE02 0
-text0 FDD8 FE01 CODE FDD8 0
-text1 FDB0 FDD7 CODE FDB0 0
-text5 FD96 FDAF CODE FD96 0
-text8 FD82 FD95 CODE FD82 0
-text4 FD76 FD81 CODE FD76 0
-text6 FD6E FD75 CODE FD6E 0
-text7 FD66 FD6D CODE FD66 0
-cinit FD60 FD65 CODE FD60 0
+text2 FDCC FEFD CODE FDCC 0
+text3 FD00 FDCB CODE FD00 0
+text0 FCD6 FCFF CODE FCD6 0
+text1 FCAE FCD5 CODE FCAE 0
+text5 FC94 FCAD CODE FC94 0
+text8 FC80 FC93 CODE FC80 0
+text4 FC74 FC7F CODE FC74 0
+cinit FC6A FC73 CODE FC6A 0
+text6 FC62 FC69 CODE FC62 0
+text7 FC5A FC61 CODE FC5A 0
 %locals
 dist/default/production/midi.X.production.obj
 /Applications/microchip/xc8/v1.45/include/pic18f4620.h
-/tmp/xc4uu6hgl
-375 FD60 0 CODE 0
-377 FD60 0 CODE 0
-380 FD60 0 CODE 0
-386 FD60 0 CODE 0
-388 FD60 0 CODE 0
-389 FD62 0 CODE 0
+/tmp/xckeyrxkz
+513 FC6A 0 CODE 0
+515 FC6A 0 CODE 0
+518 FC6A 0 CODE 0
+524 FC6A 0 CODE 0
+527 FC6A 0 CODE 0
+528 FC6C 0 CODE 0
+529 FC6E 0 CODE 0
+530 FC70 0 CODE 0
 main.c
-227 FDD8 0 CODE 0
-228 FDD8 0 CODE 0
-230 FDE8 0 CODE 0
-232 FDFC 0 CODE 0
-233 FDFC 0 CODE 0
-234 FE00 0 CODE 0
+227 FCD6 0 CODE 0
+228 FCD6 0 CODE 0
+230 FCE6 0 CODE 0
+232 FCFA 0 CODE 0
+233 FCFA 0 CODE 0
+234 FCFE 0 CODE 0
 main.c
-170 FDB0 0 CODE 0
-171 FDB0 0 CODE 0
-173 FDB4 0 CODE 0
-174 FDBA 0 CODE 0
-178 FDC0 0 CODE 0
-180 FDD6 0 CODE 0
+170 FCAE 0 CODE 0
+171 FCAE 0 CODE 0
+173 FCB2 0 CODE 0
+174 FCB8 0 CODE 0
+178 FCBE 0 CODE 0
+180 FCD4 0 CODE 0
 main.c
-78 FECE 0 CODE 0
-80 FECE 0 CODE 0
-81 FF54 0 CODE 0
-82 FF5A 0 CODE 0
-83 FFE0 0 CODE 0
-84 FFE2 0 CODE 0
-86 FFE2 0 CODE 0
-87 FFE8 0 CODE 0
-88 FFEC 0 CODE 0
-89 FFEE 0 CODE 0
-90 FFF0 0 CODE 0
-91 FFF2 0 CODE 0
-92 FFF4 0 CODE 0
-93 FFF6 0 CODE 0
-94 FFF8 0 CODE 0
-95 FFFC 0 CODE 0
-96 FFFC 0 CODE 0
+78 FDCC 0 CODE 0
+80 FDCC 0 CODE 0
+81 FE52 0 CODE 0
+82 FE58 0 CODE 0
+83 FEDE 0 CODE 0
+84 FEE0 0 CODE 0
+86 FEE0 0 CODE 0
+87 FEE6 0 CODE 0
+88 FEEA 0 CODE 0
+89 FEEC 0 CODE 0
+90 FEEE 0 CODE 0
+91 FEF0 0 CODE 0
+92 FEF2 0 CODE 0
+93 FEF4 0 CODE 0
+94 FEF6 0 CODE 0
+95 FEFA 0 CODE 0
+96 FEFA 0 CODE 0
 /Applications/microchip/xc8/v1.45/sources/common/aldiv.c
-8 FE02 0 CODE 0
-14 FE02 0 CODE 0
-15 FE06 0 CODE 0
-16 FE0A 0 CODE 0
-17 FE1A 0 CODE 0
-18 FE1E 0 CODE 0
-19 FE1E 0 CODE 0
-20 FE22 0 CODE 0
-21 FE32 0 CODE 0
-22 FE36 0 CODE 0
-23 FE36 0 CODE 0
-24 FE46 0 CODE 0
-25 FE52 0 CODE 0
-26 FE56 0 CODE 0
-27 FE58 0 CODE 0
-28 FE62 0 CODE 0
-29 FE64 0 CODE 0
-26 FE64 0 CODE 0
-31 FE68 0 CODE 0
-32 FE72 0 CODE 0
-33 FE86 0 CODE 0
-34 FE96 0 CODE 0
-35 FE98 0 CODE 0
-36 FE98 0 CODE 0
-37 FEA2 0 CODE 0
-39 FEA6 0 CODE 0
-40 FEAC 0 CODE 0
-41 FEBC 0 CODE 0
+8 FD00 0 CODE 0
+14 FD00 0 CODE 0
+15 FD04 0 CODE 0
+16 FD08 0 CODE 0
+17 FD18 0 CODE 0
+18 FD1C 0 CODE 0
+19 FD1C 0 CODE 0
+20 FD20 0 CODE 0
+21 FD30 0 CODE 0
+22 FD34 0 CODE 0
+23 FD34 0 CODE 0
+24 FD44 0 CODE 0
+25 FD50 0 CODE 0
+26 FD54 0 CODE 0
+27 FD56 0 CODE 0
+28 FD60 0 CODE 0
+29 FD62 0 CODE 0
+26 FD62 0 CODE 0
+31 FD66 0 CODE 0
+32 FD70 0 CODE 0
+33 FD84 0 CODE 0
+34 FD94 0 CODE 0
+35 FD96 0 CODE 0
+36 FD96 0 CODE 0
+37 FDA0 0 CODE 0
+39 FDA4 0 CODE 0
+40 FDAA 0 CODE 0
+41 FDBA 0 CODE 0
 main.c
-150 FD76 0 CODE 0
-152 FD76 0 CODE 0
-155 FD7A 0 CODE 0
-159 FD7E 0 CODE 0
+150 FC74 0 CODE 0
+152 FC74 0 CODE 0
+155 FC78 0 CODE 0
+159 FC7C 0 CODE 0
 main.c
-212 FD96 0 CODE 0
-213 FD96 0 CODE 0
-214 FD9A 0 CODE 0
-215 FDA4 0 CODE 0
-221 FDAA 0 CODE 0
+212 FC94 0 CODE 0
+213 FC94 0 CODE 0
+214 FC98 0 CODE 0
+215 FCA2 0 CODE 0
+221 FCA8 0 CODE 0
 main.c
-134 FD6E 0 CODE 0
-135 FD6E 0 CODE 0
-136 FD72 0 CODE 0
+134 FC62 0 CODE 0
+135 FC62 0 CODE 0
+136 FC66 0 CODE 0
 main.c
-109 FD66 0 CODE 0
-110 FD66 0 CODE 0
+109 FC5A 0 CODE 0
+110 FC5A 0 CODE 0
 main.c
-187 FD82 0 CODE 0
-188 FD82 0 CODE 0
-189 FD84 0 CODE 0
-190 FD92 0 CODE 0
-191 FD94 0 CODE 0
+187 FC80 0 CODE 0
+188 FC80 0 CODE 0
+189 FC82 0 CODE 0
+190 FC90 0 CODE 0
+191 FC92 0 CODE 0
