@@ -235,3 +235,16 @@ void main(void) {
     
     return;
 }
+
+
+// Convert a frequency to the counter values needed to generate it, assuming
+// the master DCO clock frequency is fixed at 2 mhz.
+// TODO(tdial): Don't assume 2mhz
+void tone_to_counter_values(long freq,
+                            unsigned char* lsb, 
+                            unsigned char* msb)
+{
+  const unsigned long CLOCK = 2000000;
+  *lsb = (unsigned char) (freq & 0xff);
+  *msb = (unsigned char) ((freq >> 8) & 0xff);
+}

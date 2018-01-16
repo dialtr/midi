@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "intel_8254.c"
 
 # 26 "/Applications/microchip/xc8/v1.45/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -4561,140 +4561,97 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
+# 10 "intel_8254.h"
+char intel_8254_init();
 
-# 43 "main.c"
-#pragma config OSC = HS
-#pragma config MCLRE = OFF
-#pragma config PWRT = OFF
-#pragma config PBADEN = OFF
-#pragma config WDT = OFF
-#pragma config DEBUG = OFF
-#pragma config LVP = OFF
-#pragma config BOREN = 0
 
-# 78
-char uart_init(long int baudrate) {
-unsigned int x;
-x = (8000000 - (baudrate * 64)) / (baudrate * 64);
-if (x > 255) {
-x = (8000000 - (baudrate * 16)) / (baudrate * 16);
-BRGH = 1;
-}
+void intel_8254_set_timer0(unsigned char lsb, unsigned char msb);
 
-if (x < 256) {
-SPBRG = x;
-SYNC = 0;
-SPEN = 1;
-TRISC7 = 1;
-TRISC6 = 1;
-CREN = 1;
-TXEN = 1;
-return 1;
-}
-return 0;
-}
+# 18 "intel_8254.c"
+char intel_8254_init() {
 
-# 109
-char uart_data_ready() {
-return RCIF;
-}
+TRISB = 0;
 
-# 134
-char uart_read() {
-while (!RCIF);
-return RCREG;
-}
-
-# 150
-char port_init() {
 
 TRISD = 0;
 
-
-PORTD = 0;
-
-
-
-return 1;
-}
-
-# 166
-void error();
+# 29
+PORTDbits.RD2 = 1;
+PORTDbits.RD3 = 1;
+PORTDbits.RD4 = 1;
+PORTDbits.RD5 = 1;
 
 
-
-char system_init(long baudrate) {
-char status = 0;
-
-status = port_init();
-if (!status) {
-return status;
-}
-
-status = uart_init(baudrate);
-if (!status) {
-return status;
-}
+PORTB = 0;
 
 return 1;
 }
 
+# 46
+void intel_8254_transfer_data() {
 
-void blink() {
-PORTDbits.RD1 = 1;
-_delay((unsigned long)((1)*(8000000/4000.0)));
-PORTDbits.RD1 = 0;
+
+PORTDbits.RD2 = 0;
+__nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop();
+
+PORTDbits.RD3 = 0;
+__nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop();
+__nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop();
+
+PORTDbits.RD3 = 1;
+__nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop();
+
+PORTDbits.RD2 = 1;
+__nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop();
 }
 
 
-void wait() {
-_delay((unsigned long)((1000)*(8000000/4000.0)));
+void intel_8254_set_timer0(unsigned char lsb, unsigned char msb) {
+const unsigned char CONTROL_WORD = 0b00110110;
+
+
+PORTDbits.RD2 = 1;
+PORTDbits.RD3 = 1;
+__nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop();
+
+
+
+
+PORTDbits.RD4 = 1;
+PORTDbits.RD5 = 1;
+PORTB = CONTROL_WORD;
+
+
+
+__nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop();
+
+
+intel_8254_transfer_data();
+
+
+
+
+PORTDbits.RD4 = 0;
+PORTDbits.RD5 = 0;
+PORTB = lsb;
+
+
+__nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop();
+
+
+intel_8254_transfer_data();
+
+
+
+
+PORTDbits.RD4 = 0;
+PORTDbits.RD5 = 0;
+PORTB = msb;
+
+
+__nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop();
+
+
+intel_8254_transfer_data();
 }
 
-
-
-void error() {
-for (;;) {
-blink();
-blink();
-blink();
-wait();
-}
-}
-
-
-
-
-void loop() {
-char b = 0;
-if (uart_data_ready()) {
-b = uart_read();
-
-# 221
-blink();
-}
-}
-
-
-
-void main(void) {
-const long MIDI_BAUD_RATE = 31250;
-
-system_init(MIDI_BAUD_RATE);
-
-for (;;) {
-loop();
-}
-
-return;
-}
-
-# 243
-void tone_to_counter_values(long freq,
-unsigned char* lsb,
-unsigned char* msb)
-{
-const unsigned long CLOCK = 2000000;
-*lsb = (unsigned char) (freq & 0xff);
-*msb = (unsigned char) ((freq >> 8) & 0xff);
-}

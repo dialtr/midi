@@ -24,7 +24,7 @@ text7 CODE 0 FC5A FC5A 8 1
 text8 CODE 0 FC80 FC80 14 1
 cstackCOMRAM COMRAM 1 1 1 25 1
 mediumconst MEDIUMCONST 0 FEFE FEFE 102 1
-$/tmp/xcyzohi9e.obj
+$/tmp/xcsPdxJlu.obj
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -150,14 +150,14 @@ FCE6 text0 CODE >230:/Users/tdial/Projects/midi/midi.X/main.c
 FCFA text0 CODE >232:/Users/tdial/Projects/midi/midi.X/main.c
 FCFA text0 CODE >233:/Users/tdial/Projects/midi/midi.X/main.c
 FCFE text0 CODE >234:/Users/tdial/Projects/midi/midi.X/main.c
-FC6A cinit CODE >513:/tmp/xckeyrxkz
-FC6A cinit CODE >515:/tmp/xckeyrxkz
-FC6A cinit CODE >518:/tmp/xckeyrxkz
-FC6A cinit CODE >524:/tmp/xckeyrxkz
-FC6A cinit CODE >527:/tmp/xckeyrxkz
-FC6C cinit CODE >528:/tmp/xckeyrxkz
-FC6E cinit CODE >529:/tmp/xckeyrxkz
-FC70 cinit CODE >530:/tmp/xckeyrxkz
+FC6A cinit CODE >791:/tmp/xc7KVVl1B
+FC6A cinit CODE >793:/tmp/xc7KVVl1B
+FC6A cinit CODE >796:/tmp/xc7KVVl1B
+FC6A cinit CODE >802:/tmp/xc7KVVl1B
+FC6A cinit CODE >805:/tmp/xc7KVVl1B
+FC6C cinit CODE >806:/tmp/xc7KVVl1B
+FC6E cinit CODE >807:/tmp/xc7KVVl1B
+FC70 cinit CODE >808:/tmp/xc7KVVl1B
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -176,7 +176,7 @@ __Hspace_1 26 0 ABS 0 - dist/default/production/midi.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production/midi.X.production.obj
 __end_of_MIDI_NOTE_FREQUENCY_TABLE FFFF 0 MEDIUMCONST 0 mediumconst dist/default/production/midi.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/midi.X.production.obj
-__mediumconst FEFE 0 MEDIUMCONST 0 mediumconst /tmp/xcyzohi9e.obj
+__mediumconst FEFE 0 MEDIUMCONST 0 mediumconst /tmp/xcsPdxJlu.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/midi.X.production.obj
 loop@b 2 0 COMRAM 1 cstackCOMRAM dist/default/production/midi.X.production.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/midi.X.production.obj
@@ -186,10 +186,10 @@ _RCIF 7CF5 0 ABS 0 - dist/default/production/midi.X.production.obj
 _SPEN 7D5F 0 ABS 0 - dist/default/production/midi.X.production.obj
 _SYNC 7D64 0 ABS 0 - dist/default/production/midi.X.production.obj
 _TXEN 7D65 0 ABS 0 - dist/default/production/midi.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcyzohi9e.obj
+___sp 0 0 STACK 2 stack /tmp/xcsPdxJlu.obj
 _loop FC94 0 CODE 0 text5 dist/default/production/midi.X.production.obj
 _main FCD6 0 CODE 0 text0 dist/default/production/midi.X.production.obj
-start 0 0 CODE 0 init /tmp/xcyzohi9e.obj
+start 0 0 CODE 0 init /tmp/xcsPdxJlu.obj
 __size_of___aldiv 0 0 ABS 0 - dist/default/production/midi.X.production.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production/midi.X.production.obj
 __size_of_loop 0 0 ABS 0 - dist/default/production/midi.X.production.obj
@@ -199,11 +199,11 @@ __CFG_DEBUG$OFF 0 0 ABS 0 - dist/default/production/midi.X.production.obj
 _system_init FCAE 0 CODE 0 text1 dist/default/production/midi.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup dist/default/production/midi.X.production.obj
 system_init@status 21 0 COMRAM 1 cstackCOMRAM dist/default/production/midi.X.production.obj
-__accesstop 80 0 ABS 0 - /tmp/xcyzohi9e.obj
-intlevel0 0 0 CODE 0 text /tmp/xcyzohi9e.obj
-intlevel1 0 0 CODE 0 text /tmp/xcyzohi9e.obj
-intlevel2 0 0 CODE 0 text /tmp/xcyzohi9e.obj
-intlevel3 0 0 CODE 0 text /tmp/xcyzohi9e.obj
+__accesstop 80 0 ABS 0 - /tmp/xcsPdxJlu.obj
+intlevel0 0 0 CODE 0 text /tmp/xcsPdxJlu.obj
+intlevel1 0 0 CODE 0 text /tmp/xcsPdxJlu.obj
+intlevel2 0 0 CODE 0 text /tmp/xcsPdxJlu.obj
+intlevel3 0 0 CODE 0 text /tmp/xcsPdxJlu.obj
 ___aldiv@divisor 5 0 COMRAM 1 cstackCOMRAM dist/default/production/midi.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/midi.X.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production/midi.X.production.obj
@@ -211,8 +211,8 @@ ___aldiv@sign A 0 COMRAM 1 cstackCOMRAM dist/default/production/midi.X.productio
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production/midi.X.production.obj
 uart_init@baudrate F 0 COMRAM 1 cstackCOMRAM dist/default/production/midi.X.production.obj
 _uart_data_ready FC5A 0 CODE 0 text7 dist/default/production/midi.X.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/xcyzohi9e.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/xcyzohi9e.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/xcsPdxJlu.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/xcsPdxJlu.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production/midi.X.production.obj
 main@MIDI_BAUD_RATE 22 0 COMRAM 1 cstackCOMRAM dist/default/production/midi.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/midi.X.production.obj
@@ -266,7 +266,7 @@ __Hbank15 0 0 ABS 0 bank15 dist/default/production/midi.X.production.obj
 __end_of_port_init FC80 0 CODE 0 text4 dist/default/production/midi.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/midi.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production/midi.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcyzohi9e.obj
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcsPdxJlu.obj
 __size_of_port_init 0 0 ABS 0 - dist/default/production/midi.X.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production/midi.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production/midi.X.production.obj
@@ -343,8 +343,8 @@ __Lcomram 0 0 ABS 0 comram dist/default/production/midi.X.production.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/production/midi.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production/midi.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production/midi.X.production.obj
-stackhi F7F 0 ABS 0 - /tmp/xcyzohi9e.obj
-stacklo 80 0 ABS 0 - /tmp/xcyzohi9e.obj
+stackhi F7F 0 ABS 0 - /tmp/xcsPdxJlu.obj
+stacklo 80 0 ABS 0 - /tmp/xcsPdxJlu.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production/midi.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production/midi.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production/midi.X.production.obj
@@ -378,7 +378,7 @@ __ptext8 FC80 0 CODE 0 text8 dist/default/production/midi.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production/midi.X.production.obj
 __size_of_uart_init 0 0 ABS 0 - dist/default/production/midi.X.production.obj
 __size_of_uart_read 0 0 ABS 0 - dist/default/production/midi.X.production.obj
-__ramtop 1000 0 RAM 0 ramtop /tmp/xcyzohi9e.obj
+__ramtop 1000 0 RAM 0 ramtop /tmp/xcsPdxJlu.obj
 ___aldiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production/midi.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup dist/default/production/midi.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/midi.X.production.obj
@@ -399,9 +399,11 @@ ___aldiv@counter 9 0 COMRAM 1 cstackCOMRAM dist/default/production/midi.X.produc
 __end_of_loop FCAE 0 CODE 0 text5 dist/default/production/midi.X.production.obj
 __end_of_main FD00 0 CODE 0 text0 dist/default/production/midi.X.production.obj
 __end_of_blink FC94 0 CODE 0 text8 dist/default/production/midi.X.production.obj
+_PORTB F81 0 ABS 0 - dist/default/production/midi.X.production.obj
 _PORTD F83 0 ABS 0 - dist/default/production/midi.X.production.obj
 _RCREG FAE 0 ABS 0 - dist/default/production/midi.X.production.obj
 _SPBRG FAF 0 ABS 0 - dist/default/production/midi.X.production.obj
+_TRISB F93 0 ABS 0 - dist/default/production/midi.X.production.obj
 _TRISD F95 0 ABS 0 - dist/default/production/midi.X.production.obj
 __HRAM 0 0 ABS 0 - dist/default/production/midi.X.production.obj
 __Hbss 0 0 RAM 1 bss dist/default/production/midi.X.production.obj

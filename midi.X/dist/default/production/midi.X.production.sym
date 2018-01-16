@@ -21,7 +21,9 @@ start 0 0 CODE 0
 __end_of_system_init FCD6 0 CODE 0
 __end_of___aldiv FDCC 0 CODE 0
 _RCREG FAE 0 ABS 0
+_TRISB F93 0 ABS 0
 _TRISD F95 0 ABS 0
+_PORTB F81 0 ABS 0
 _SPBRG FAF 0 ABS 0
 __Hirdata 0 0 CODE 0
 __Lirdata 0 0 CODE 0
@@ -265,15 +267,15 @@ text7 FC5A FC61 CODE FC5A 0
 %locals
 dist/default/production/midi.X.production.obj
 /Applications/microchip/xc8/v1.45/include/pic18f4620.h
-/tmp/xckeyrxkz
-513 FC6A 0 CODE 0
-515 FC6A 0 CODE 0
-518 FC6A 0 CODE 0
-524 FC6A 0 CODE 0
-527 FC6A 0 CODE 0
-528 FC6C 0 CODE 0
-529 FC6E 0 CODE 0
-530 FC70 0 CODE 0
+/tmp/xc7KVVl1B
+791 FC6A 0 CODE 0
+793 FC6A 0 CODE 0
+796 FC6A 0 CODE 0
+802 FC6A 0 CODE 0
+805 FC6A 0 CODE 0
+806 FC6C 0 CODE 0
+807 FC6E 0 CODE 0
+808 FC70 0 CODE 0
 main.c
 227 FCD6 0 CODE 0
 228 FCD6 0 CODE 0

@@ -25,6 +25,8 @@
 [v ___flmul __flmul `(d  1 e 3 0 ]
 "15 /Applications/microchip/xc8/v1.45/sources/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
+"46 /Users/tdial/Projects/midi/midi.X/intel_8254.c
+[v _intel_8254_transfer_data intel_8254_transfer_data `(v  1 e 1 0 ]
 "78 /Users/tdial/Projects/midi/midi.X/main.c
 [v _uart_init uart_init `(uc  1 e 1 0 ]
 "109
@@ -43,7 +45,9 @@
 [v _loop loop `(v  1 e 1 0 ]
 "227
 [v _main main `(v  1 e 1 0 ]
-"533 /Applications/microchip/xc8/v1.45/include/pic18f4620.h
+"187 /Applications/microchip/xc8/v1.45/include/pic18f4620.h
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"533
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
 [s S33 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
@@ -74,6 +78,8 @@
 ]
 [u S59 . 1 `S33 1 . 1 0 `S42 1 . 1 0 `S51 1 . 1 0 `S56 1 . 1 0 ]
 [v _PORTDbits PORTDbits `VES59  1 e 1 @3971 ]
+"1600
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "2044
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "3496

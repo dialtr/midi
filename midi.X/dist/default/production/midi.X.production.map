@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/Applications/microchip/xc8/v1.45/dat/en_msgs.txt -cs \
   -h+dist/default/production/midi.X.production.sym \
   --cmf=dist/default/production/midi.X.production.cmf -z -Q18F4620 \
-  -o/tmp/xcgxCgmtL -Mdist/default/production/midi.X.production.map -E1 \
+  -o/tmp/xckCCOkK4 -Mdist/default/production/midi.X.production.map -E1 \
   -ver=XC8 -ASTACK=080h-0f7fh -pstack=STACK -ACODE=00h-0FFFFh \
   -ACONST=00h-0FFFFh -ASMALLCONST=01000h-010FFhx240 \
   -AMEDIUMCONST=01000h-0FFFFh -ACOMRAM=01h-07Fh -AABS1=00h-0F7Fh \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcyzohi9e.obj dist/default/production/midi.X.production.obj 
+  /tmp/xcsPdxJlu.obj dist/default/production/midi.X.production.obj 
 
 Object code version is 3.11
 
@@ -37,7 +37,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcyzohi9e.obj
+/tmp/xcsPdxJlu.obj
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
@@ -188,6 +188,7 @@ UNUSED ADDRESS RANGES
 _BRGH                              (abs)        007D62
 _CREN                              (abs)        007D5C
 _MIDI_NOTE_FREQUENCY_TABLE         mediumconst  00FEFF
+_PORTB                             (abs)        000F81
 _PORTD                             (abs)        000F83
 _PORTDbits                         (abs)        000F83
 _RCIF                              (abs)        007CF5
@@ -195,6 +196,7 @@ _RCREG                             (abs)        000FAE
 _SPBRG                             (abs)        000FAF
 _SPEN                              (abs)        007D5F
 _SYNC                              (abs)        007D64
+_TRISB                             (abs)        000F93
 _TRISC6                            (abs)        007CA6
 _TRISC7                            (abs)        007CA7
 _TRISD                             (abs)        000F95

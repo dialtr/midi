@@ -1,28 +1,8 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"6791 /Applications/microchip/xc8/v1.45/include/pic18f4620.h
-[v _BRGH `Vb ~T0 @X0 0 e@32098 ]
-"3508
-[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
-"7617
-[v _SYNC `Vb ~T0 @X0 0 e@32100 ]
-"7565
-[v _SPEN `Vb ~T0 @X0 0 e@32095 ]
-"7769
-[v _TRISC7 `Vb ~T0 @X0 0 e@31911 ]
-"7767
-[v _TRISC6 `Vb ~T0 @X0 0 e@31910 ]
-"6887
-[v _CREN `Vb ~T0 @X0 0 e@32092 ]
-"7829
-[v _TXEN `Vb ~T0 @X0 0 e@32101 ]
-"7465
-[v _RCIF `Vb ~T0 @X0 0 e@31989 ]
-"3496
-[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
+"1600 /Applications/microchip/xc8/v1.45/include/pic18f4620.h
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
 "2044
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"533
-[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
 "539
 [s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S22 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
@@ -40,11 +20,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S21 . . . . . ]
 "570
 [v _PORTDbits `VS21 ~T0 @X0 0 e@3971 ]
-[v F3650 `(v ~T0 @X0 1 tf1`ul ]
-"164 /Applications/microchip/xc8/v1.45/include/pic18.h
-[v __delay `JF3650 ~T0 @X0 0 e ]
-[p i __delay ]
-[p mainexit ]
+"187
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"43 /Applications/microchip/xc8/v1.45/include/pic18.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -3342,351 +3322,426 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-"43 main.c
-[p x OSC=HS ]
-"44
-[p x MCLRE=OFF ]
-"45
-[p x PWRT=OFF ]
-"46
-[p x PBADEN=OFF ]
-"47
-[p x WDT=OFF ]
-"48
-[p x DEBUG=OFF ]
-"49
-[p x LVP=OFF ]
-"50
-[p x BOREN=OFF ]
-"78
-[v _uart_init `(uc ~T0 @X0 1 ef1`l ]
+[; ;intel_8254.h: 10: char intel_8254_init();
+[; ;intel_8254.h: 13: void intel_8254_set_timer0(unsigned char lsb, unsigned char msb);
+"18 intel_8254.c
+[v _intel_8254_init `(uc ~T0 @X0 1 ef ]
 {
-[; ;main.c: 78: char uart_init(long int baudrate) {
-[e :U _uart_init ]
-[v _baudrate `l ~T0 @X0 1 r1 ]
+[; ;intel_8254.c: 18: char intel_8254_init() {
+[e :U _intel_8254_init ]
 [f ]
-"79
-[v _x `ui ~T0 @X0 1 a ]
-[; ;main.c: 79: unsigned int x;
-[; ;main.c: 80: x = (8000000 - (baudrate * 64)) / (baudrate * 64);
-"80
-[e = _x -> / - -> 8000000 `l * _baudrate -> -> 64 `i `l * _baudrate -> -> 64 `i `l `ui ]
-[; ;main.c: 81: if (x > 255) {
-"81
-[e $ ! > _x -> -> 255 `i `ui 301  ]
-{
-[; ;main.c: 82: x = (8000000 - (baudrate * 16)) / (baudrate * 16);
-"82
-[e = _x -> / - -> 8000000 `l * _baudrate -> -> 16 `i `l * _baudrate -> -> 16 `i `l `ui ]
-[; ;main.c: 83: BRGH = 1;
-"83
-[e = _BRGH -> -> 1 `i `b ]
-"84
-}
-[e :U 301 ]
-[; ;main.c: 84: }
-[; ;main.c: 86: if (x < 256) {
-"86
-[e $ ! < _x -> -> 256 `i `ui 302  ]
-{
-[; ;main.c: 87: SPBRG = x;
-"87
-[e = _SPBRG -> _x `uc ]
-[; ;main.c: 88: SYNC = 0;
-"88
-[e = _SYNC -> -> 0 `i `b ]
-[; ;main.c: 89: SPEN = 1;
-"89
-[e = _SPEN -> -> 1 `i `b ]
-[; ;main.c: 90: TRISC7 = 1;
-"90
-[e = _TRISC7 -> -> 1 `i `b ]
-[; ;main.c: 91: TRISC6 = 1;
-"91
-[e = _TRISC6 -> -> 1 `i `b ]
-[; ;main.c: 92: CREN = 1;
-"92
-[e = _CREN -> -> 1 `i `b ]
-[; ;main.c: 93: TXEN = 1;
-"93
-[e = _TXEN -> -> 1 `i `b ]
-[; ;main.c: 94: return 1;
-"94
+[; ;intel_8254.c: 20: TRISB = 0;
+"20
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;intel_8254.c: 23: TRISD = 0;
+"23
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;intel_8254.c: 29: PORTDbits.RD2 = 1;
+"29
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+[; ;intel_8254.c: 30: PORTDbits.RD3 = 1;
+"30
+[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
+[; ;intel_8254.c: 31: PORTDbits.RD4 = 1;
+"31
+[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
+[; ;intel_8254.c: 32: PORTDbits.RD5 = 1;
+"32
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+[; ;intel_8254.c: 35: PORTB = 0;
+"35
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;intel_8254.c: 37: return 1;
+"37
 [e ) -> -> 1 `i `uc ]
 [e $UE 300  ]
-"95
-}
-[e :U 302 ]
-[; ;main.c: 95: }
-[; ;main.c: 96: return 0;
-"96
-[e ) -> -> 0 `i `uc ]
-[e $UE 300  ]
-[; ;main.c: 97: }
-"97
+[; ;intel_8254.c: 38: }
+"38
 [e :UE 300 ]
 }
-"109
-[v _uart_data_ready `(uc ~T0 @X0 1 ef ]
+"46
+[v _intel_8254_transfer_data `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 109: char uart_data_ready() {
-[e :U _uart_data_ready ]
+[; ;intel_8254.c: 46: void intel_8254_transfer_data() {
+[e :U _intel_8254_transfer_data ]
 [f ]
-[; ;main.c: 110: return RCIF;
+[; ;intel_8254.c: 49: PORTDbits.RD2 = 0;
+"49
+[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
+[; ;intel_8254.c: 50: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop()
+"50
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[; ;intel_8254.c: 52: PORTDbits.RD3 = 0;
+"52
+[e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
+[; ;intel_8254.c: 53: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop()
+"53
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[; ;intel_8254.c: 54: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop()
+"54
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[; ;intel_8254.c: 56: PORTDbits.RD3 = 1;
+"56
+[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
+[; ;intel_8254.c: 57: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop()
+"57
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[; ;intel_8254.c: 59: PORTDbits.RD2 = 1;
+"59
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+[; ;intel_8254.c: 60: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop()
+"60
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[; ;intel_8254.c: 61: }
+"61
+[e :UE 301 ]
+}
+"64
+[v _intel_8254_set_timer0 `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;intel_8254.c: 64: void intel_8254_set_timer0(unsigned char lsb, unsigned char msb) {
+[e :U _intel_8254_set_timer0 ]
+[v _lsb `uc ~T0 @X0 1 r1 ]
+[v _msb `uc ~T0 @X0 1 r2 ]
+[f ]
+"65
+[v _CONTROL_WORD `Cuc ~T0 @X0 1 a ]
+[; ;intel_8254.c: 65: const unsigned char CONTROL_WORD = 0b00110110;
+[e = _CONTROL_WORD -> -> 54 `i `uc ]
+[; ;intel_8254.c: 68: PORTDbits.RD2 = 1;
+"68
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+[; ;intel_8254.c: 69: PORTDbits.RD3 = 1;
+"69
+[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
+[; ;intel_8254.c: 70: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop()
+"70
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[; ;intel_8254.c: 75: PORTDbits.RD4 = 1;
+"75
+[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
+[; ;intel_8254.c: 76: PORTDbits.RD5 = 1;
+"76
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+[; ;intel_8254.c: 77: PORTB = CONTROL_WORD;
+"77
+[e = _PORTB _CONTROL_WORD ]
+[; ;intel_8254.c: 81: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop()
+"81
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[; ;intel_8254.c: 84: intel_8254_transfer_data();
+"84
+[e ( _intel_8254_transfer_data ..  ]
+[; ;intel_8254.c: 89: PORTDbits.RD4 = 0;
+"89
+[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
+[; ;intel_8254.c: 90: PORTDbits.RD5 = 0;
+"90
+[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
+[; ;intel_8254.c: 91: PORTB = lsb;
+"91
+[e = _PORTB _lsb ]
+[; ;intel_8254.c: 94: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop()
+"94
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[; ;intel_8254.c: 97: intel_8254_transfer_data();
+"97
+[e ( _intel_8254_transfer_data ..  ]
+[; ;intel_8254.c: 102: PORTDbits.RD4 = 0;
+"102
+[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
+[; ;intel_8254.c: 103: PORTDbits.RD5 = 0;
+"103
+[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
+[; ;intel_8254.c: 104: PORTB = msb;
+"104
+[e = _PORTB _msb ]
+[; ;intel_8254.c: 107: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop()
+"107
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[e ( ___nop ..  ]
+[; ;intel_8254.c: 110: intel_8254_transfer_data();
 "110
-[e ) -> -> _RCIF `i `uc ]
-[e $UE 303  ]
-[; ;main.c: 111: }
+[e ( _intel_8254_transfer_data ..  ]
+[; ;intel_8254.c: 111: }
 "111
-[e :UE 303 ]
-}
-"134
-[v _uart_read `(uc ~T0 @X0 1 ef ]
-{
-[; ;main.c: 134: char uart_read() {
-[e :U _uart_read ]
-[f ]
-[; ;main.c: 135: while (!RCIF);
-"135
-[e $U 305  ]
-[e :U 306 ]
-[e :U 305 ]
-[e $ ! _RCIF 306  ]
-[e :U 307 ]
-[; ;main.c: 136: return RCREG;
-"136
-[e ) _RCREG ]
-[e $UE 304  ]
-[; ;main.c: 137: }
-"137
-[e :UE 304 ]
-}
-"150
-[v _port_init `(uc ~T0 @X0 1 ef ]
-{
-[; ;main.c: 150: char port_init() {
-[e :U _port_init ]
-[f ]
-[; ;main.c: 152: TRISD = 0;
-"152
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;main.c: 155: PORTD = 0;
-"155
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;main.c: 159: return 1;
-"159
-[e ) -> -> 1 `i `uc ]
-[e $UE 308  ]
-[; ;main.c: 160: }
-"160
-[e :UE 308 ]
-}
-[; ;main.c: 166: void error();
-"170
-[v _system_init `(uc ~T0 @X0 1 ef1`l ]
-{
-[; ;main.c: 170: char system_init(long baudrate) {
-[e :U _system_init ]
-[v _baudrate `l ~T0 @X0 1 r1 ]
-[f ]
-"171
-[v _status `uc ~T0 @X0 1 a ]
-[; ;main.c: 171: char status = 0;
-[e = _status -> -> 0 `i `uc ]
-[; ;main.c: 173: status = port_init();
-"173
-[e = _status ( _port_init ..  ]
-[; ;main.c: 174: if (!status) {
-"174
-[e $ ! ! != -> _status `i -> -> -> 0 `i `uc `i 310  ]
-{
-[; ;main.c: 175: return status;
-"175
-[e ) _status ]
-[e $UE 309  ]
-"176
-}
-[e :U 310 ]
-[; ;main.c: 176: }
-[; ;main.c: 178: status = uart_init(baudrate);
-"178
-[e = _status ( _uart_init (1 _baudrate ]
-[; ;main.c: 179: if (!status) {
-"179
-[e $ ! ! != -> _status `i -> -> -> 0 `i `uc `i 311  ]
-{
-[; ;main.c: 180: return status;
-"180
-[e ) _status ]
-[e $UE 309  ]
-"181
-}
-[e :U 311 ]
-[; ;main.c: 181: }
-[; ;main.c: 183: return 1;
-"183
-[e ) -> -> 1 `i `uc ]
-[e $UE 309  ]
-[; ;main.c: 184: }
-"184
-[e :UE 309 ]
-}
-"187
-[v _blink `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 187: void blink() {
-[e :U _blink ]
-[f ]
-[; ;main.c: 188: PORTDbits.RD1 = 1;
-"188
-[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 189: _delay((unsigned long)((1)*(8000000/4000.0)));
-"189
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 190: PORTDbits.RD1 = 0;
-"190
-[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 191: }
-"191
-[e :UE 312 ]
-}
-"194
-[v _wait `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 194: void wait() {
-[e :U _wait ]
-[f ]
-[; ;main.c: 195: _delay((unsigned long)((1000)*(8000000/4000.0)));
-"195
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 196: }
-"196
-[e :UE 313 ]
-}
-"200
-[v _error `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 200: void error() {
-[e :U _error ]
-[f ]
-[; ;main.c: 201: for (;;) {
-"201
-{
-[e :U 315 ]
-{
-[; ;main.c: 202: blink();
-"202
-[e ( _blink ..  ]
-[; ;main.c: 203: blink();
-"203
-[e ( _blink ..  ]
-[; ;main.c: 204: blink();
-"204
-[e ( _blink ..  ]
-[; ;main.c: 205: wait();
-"205
-[e ( _wait ..  ]
-"206
-}
-[; ;main.c: 206: }
-[e $U 315  ]
-[e :U 316 ]
-}
-[; ;main.c: 207: }
-"207
-[e :UE 314 ]
-}
-"212
-[v _loop `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 212: void loop() {
-[e :U _loop ]
-[f ]
-"213
-[v _b `uc ~T0 @X0 1 a ]
-[; ;main.c: 213: char b = 0;
-[e = _b -> -> 0 `i `uc ]
-[; ;main.c: 214: if (uart_data_ready()) {
-"214
-[e $ ! != -> ( _uart_data_ready ..  `i -> -> -> 0 `i `uc `i 319  ]
-{
-[; ;main.c: 215: b = uart_read();
-"215
-[e = _b ( _uart_read ..  ]
-[; ;main.c: 221: blink();
-"221
-[e ( _blink ..  ]
-"222
-}
-[e :U 319 ]
-[; ;main.c: 222: }
-[; ;main.c: 223: }
-"223
-[e :UE 318 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"227
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 227: void main(void) {
-[e :U _main ]
-[f ]
-"228
-[v _MIDI_BAUD_RATE `Cl ~T0 @X0 1 a ]
-[; ;main.c: 228: const long MIDI_BAUD_RATE = 31250;
-[e = _MIDI_BAUD_RATE -> -> 31250 `i `l ]
-[; ;main.c: 230: system_init(MIDI_BAUD_RATE);
-"230
-[e ( _system_init (1 _MIDI_BAUD_RATE ]
-[; ;main.c: 232: for (;;) {
-"232
-{
-[e :U 321 ]
-{
-[; ;main.c: 233: loop();
-"233
-[e ( _loop ..  ]
-"234
-}
-[; ;main.c: 234: }
-[e $U 321  ]
-[e :U 322 ]
-}
-[; ;main.c: 236: return;
-"236
-[e $UE 320  ]
-[; ;main.c: 237: }
-"237
-[e :UE 320 ]
-}
-"243
-[v _tone_to_counter_values `(v ~T0 @X0 1 ef3`l`*uc`*uc ]
-"246
-{
-[; ;main.c: 243: void tone_to_counter_values(long freq,
-[; ;main.c: 244: unsigned char* lsb,
-[; ;main.c: 245: unsigned char* msb)
-[; ;main.c: 246: {
-[e :U _tone_to_counter_values ]
-"243
-[v _freq `l ~T0 @X0 1 r1 ]
-"244
-[v _lsb `*uc ~T0 @X0 1 r2 ]
-"245
-[v _msb `*uc ~T0 @X0 1 r3 ]
-"246
-[f ]
-"247
-[v _CLOCK `Cul ~T0 @X0 1 a ]
-[; ;main.c: 247: const unsigned long CLOCK = 2000000;
-[e = _CLOCK -> -> 2000000 `l `ul ]
-[; ;main.c: 248: *lsb = (unsigned char) (freq & 0xff);
-"248
-[e = *U _lsb -> & _freq -> -> 255 `i `l `uc ]
-[; ;main.c: 249: *msb = (unsigned char) ((freq >> 8) & 0xff);
-"249
-[e = *U _msb -> & >> _freq -> 8 `i -> -> 255 `i `l `uc ]
-[; ;main.c: 250: }
-"250
-[e :UE 324 ]
+[e :UE 302 ]
 }
